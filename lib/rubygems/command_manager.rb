@@ -39,6 +39,7 @@ class Gem::CommandManager
     :check,
     :cleanup,
     :contents,
+    :create,
     :dependency,
     :environment,
     :fetch,

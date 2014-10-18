@@ -1,0 +1,18 @@
+<%- constant_array.each_with_index do |c,i| -%>
+<%= ' '*i %>module <%= c %>
+<%- end -%>
+<%= '  '*constant_array.size %>module VERSION
+<%= '    '*constant_array.size %>MAJOR = 0
+<%= '    '*constant_array.size %>MINOR = 0
+<%= '    '*constant_array.size %>TINY  = 0
+<%= '    '*constant_array.size %>PRE   = nil
+
+<%= '    '*constant_array.size %>STRING = [MAJOR, MINOR, TINY, PRE].join(".")
+<%= '  '*constant_array.size %>end
+
+<%= '  '*constant_array.size %>def self.gem_version
+<%= '    '*constant_array.size %>::Gem::Version.new(VERSION::STRING)
+<%= '  '*constant_array.size %>end
+<%- (constant_array.size - 1).downto(0) do |i| -%>
+<%= ' '*i %>end
+<%- end -%>

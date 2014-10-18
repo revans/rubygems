@@ -1,0 +1,11 @@
+require_relative 'gem_version'
+
+<%- constant_array.each_with_index do |c,i| -%>
+<%= ' '*i %>module <%= c %>
+<%- end -%>
+<%= '  '*constant_array.size %>def self.version
+<%= '    '*constant_array.size %>gem_version
+<%= '  '*constant_array.size %>end
+<%- (constant_array.size - 1).downto(0) do |i| -%>
+<%= ' '*i %>end
+<%- end -%>
